@@ -1,0 +1,70 @@
+* September, 2014
+
+** 20140918
+    - Full-load hours.[fn:1]
+    - How to calculate the CO_2 saved by using EV/PV instead of
+      traditional fossil fuels.
+    - 
+
+** 20140922
+   - PV[fn:2]={C/((1+r)^t)}[fn:3]
+
+*** Discount rate and Inflation
+    - Comparability
+    - Factors
+      - Productivity p%/yr
+      - CPI i%/yr
+    - DR = minimum acceptable profitability
+
+*** Weighted Average Cost of Capital (WACC)
+    - A basic way of estimating DR
+    - Does NOT
+      - Reflect opportunity cost
+    - 
+
+*** Company raising capital
+    - Debt
+    - Equity
+
+*** WACC Overview
+    - Does *not* account for project risk
+    - Does *not* account for opportunity risk
+
+*** Evaluation Methods
+    - Break Even
+    - Net Present Value
+    - internal value of return
+    - Levelized Cost of Energy: constant unit cost of a payment
+      stream that has same present value as the total cost of
+      building and operating.
+
+** 20140925
+
+*** Energy Infrastructure
+    - large-scale and cheap energy provision is a key ingredient
+    - very messy, very fast
+
+*** Climate change basics
+    - we will reach the point no return, if the temperature rises just
+      2 degree.
+
+*** Weather vs Climate
+    - 
+
+
+
+
+
+* Footnotes
+
+[fn:1] Full-load hours: Whereas capacity factor is an indication of
+capacity utilization as a percentage, one also speaks of "full-load
+hours," an especially useful term for dispatchable generators, which
+can be switched on and off – such as biomass, coal, natural gas, and
+nuclear.  
+
+[fn:2] Present Value
+
+[fn:3] Updated equation. Iy
+
+
