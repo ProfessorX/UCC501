@@ -54,7 +54,42 @@
 
 ** 20140928
 
+*** Sustainable Energy
+    - Energy resources
+    - Energy uses
+    - Energy regulation
+    - Climate change and pollution
+
+*** Masdar Institute's Goal
+    - Educating Energy Practitioners[fn:4]
+
+*** How will we move forward?
+    - Core set of guiding principles
+    - Ongoing dialogue
+    - Participation of diverse stakeholders and perspectives.
+
+*** Key Definitions
+    - Energy: Capacity of a system to do work (“cause external
+      action”)
+    - Power: Rate at which work is performed or energy is transmitted
+
+*** Three Dimensions of Sustainability
+    - Finance, economy
+    - Equity social development
+    - Ecology environment
+
+*** Sustainable Development
+    - But the “environment” is where we live; and “development” is
+      what we all do in attempting to improve our lot within that
+      abode. The two are inseparable.
+
+** 20140929
+
 *** 
+
+
+
+
 
 
 
@@ -69,6 +104,8 @@ nuclear.
 
 [fn:2] Present Value
 
-[fn:3] Updated equation. Iy
+[fn:3] Updated equation. 
+
+[fn:4] We do energy stuff and we are proud of that.
 
 

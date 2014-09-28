@@ -1,63 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Sep</title>
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-<meta name="title" content="Sep"/>
-<meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2014-09-22T17:19+0400"/>
-<meta name="author" content="Abraham Xiao"/>
-<meta name="description" content=""/>
-<meta name="keywords" content=""/>
+<!-- 2014-09-28 Sun 18:26 -->
+<meta  http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta  name="generator" content="Org-mode" />
+<meta  name="author" content="Abraham Xiao" />
 <style type="text/css">
  <!--/*--><![CDATA[/*><!--*/
-  html { font-family: Times, serif; font-size: 12pt; }
   .title  { text-align: center; }
-  .todo   { color: red; }
+  .todo   { font-family: monospace; color: red; }
   .done   { color: green; }
-  .tag    { background-color: #add8e6; font-weight:normal }
-  .target { }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
   .timestamp { color: #bebebe; }
   .timestamp-kwd { color: #5f9ea0; }
-  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
-  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
-  .center {margin-left:auto; margin-right:auto; text-align:center;}
-  p.verse { margin-left: 3% }
+  .right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
   pre {
-	border: 1pt solid #AEBDCC;
-	background-color: #F3F5F7;
-	padding: 5pt;
-	font-family: courier, monospace;
-        font-size: 90%;
-        overflow:auto;
+    border: 1px solid #ccc;
+    box-shadow: 3px 3px 3px #eee;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
   }
-  table { border-collapse: collapse; }
-  td, th { vertical-align: top;  }
-  th.right  { text-align:center;  }
-  th.left   { text-align:center;   }
-  th.center { text-align:center; }
-  td.right  { text-align:right;  }
-  td.left   { text-align:left;   }
-  td.center { text-align:center; }
+  pre.src {
+    position: relative;
+    overflow: visible;
+    padding-top: 1.2em;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    background-color: white;
+    top: -10px;
+    right: 10px;
+    padding: 3px;
+    border: 1px solid black;
+  }
+  pre.src:hover:before { display: inline;}
+  pre.src-sh:before    { content: 'sh'; }
+  pre.src-bash:before  { content: 'sh'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-R:before     { content: 'R'; }
+  pre.src-perl:before  { content: 'Perl'; }
+  pre.src-java:before  { content: 'Java'; }
+  pre.src-sql:before   { content: 'SQL'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.right  { text-align: center;  }
+  th.left   { text-align: center;   }
+  th.center { text-align: center; }
+  td.right  { text-align: right;  }
+  td.left   { text-align: left;   }
+  td.center { text-align: center; }
   dt { font-weight: bold; }
-  div.figure { padding: 0.5em; }
-  div.figure p { text-align: center; }
-  div.inlinetask {
-    padding:10px;
-    border:2px solid gray;
-    margin:10px;
+  .footpara:nth-child(2) { display: inline; }
+  .footpara { display: block; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
     background: #ffffcc;
   }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
   textarea { overflow-x: auto; }
-  .linenr { font-size:smaller }
-  .code-highlighted {background-color:#ffff00;}
-  .org-info-js_info-navigation { border-style:none; }
-  #org-info-js_console-label { font-size:10px; font-weight:bold;
-                               white-space:nowrap; }
-  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
-                                 font-weight:bold; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
   /*]]>*/-->
 </style>
 <script type="text/javascript">
@@ -106,32 +134,41 @@ for the JavaScript code in this tag.
  }
 /*]]>*///-->
 </script>
-
 </head>
 <body>
-
-<div id="preamble">
-
-</div>
-
 <div id="content">
 <h1 class="title">Sep</h1>
-
-
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">1 September, 2014</a>
+<li><a href="#sec-1">1. September, 2014</a>
 <ul>
-<li><a href="#sec-1-1">1.1 20140918</a></li>
-<li><a href="#sec-1-2">1.2 20140922</a>
+<li><a href="#sec-1-1">1.1. 20140918</a></li>
+<li><a href="#sec-1-2">1.2. 20140922</a>
 <ul>
-<li><a href="#sec-1-2-1">1.2.1 Discount rate and Inflation</a></li>
-<li><a href="#sec-1-2-2">1.2.2 Weighted Average Cost of Capital (WACC)</a></li>
-<li><a href="#sec-1-2-3">1.2.3 Company raising capital</a></li>
-<li><a href="#sec-1-2-4">1.2.4 WACC Overview</a></li>
-<li><a href="#sec-1-2-5">1.2.5 Evaluation Methods</a></li>
+<li><a href="#sec-1-2-1">1.2.1. Discount rate and Inflation</a></li>
+<li><a href="#sec-1-2-2">1.2.2. Weighted Average Cost of Capital (WACC)</a></li>
+<li><a href="#sec-1-2-3">1.2.3. Company raising capital</a></li>
+<li><a href="#sec-1-2-4">1.2.4. WACC Overview</a></li>
+<li><a href="#sec-1-2-5">1.2.5. Evaluation Methods</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-3">1.3. 20140925</a>
+<ul>
+<li><a href="#sec-1-3-1">1.3.1. Energy Infrastructure</a></li>
+<li><a href="#sec-1-3-2">1.3.2. Climate change basics</a></li>
+<li><a href="#sec-1-3-3">1.3.3. Weather vs Climate</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-4">1.4. 20140928</a>
+<ul>
+<li><a href="#sec-1-4-1">1.4.1. Sustainable Energy</a></li>
+<li><a href="#sec-1-4-2">1.4.2. Masdar Institute's Goal</a></li>
+<li><a href="#sec-1-4-3">1.4.3. How will we move forward?</a></li>
+<li><a href="#sec-1-4-4">1.4.4. Key Definitions</a></li>
+<li><a href="#sec-1-4-5">1.4.5. Three Dimensions of Sustainability</a></li>
+<li><a href="#sec-1-4-6">1.4.6. Sustainable Development</a></li>
 </ul>
 </li>
 </ul>
@@ -139,176 +176,264 @@ for the JavaScript code in this tag.
 </ul>
 </div>
 </div>
-
-<div id="outline-container-1" class="outline-2">
+<div id="outline-container-sec-1" class="outline-2">
 <h2 id="sec-1"><span class="section-number-2">1</span> September, 2014</h2>
 <div class="outline-text-2" id="text-1">
-
-
-
-</div>
-
-<div id="outline-container-1-1" class="outline-3">
+</div><div id="outline-container-sec-1-1" class="outline-3">
 <h3 id="sec-1-1"><span class="section-number-3">1.1</span> 20140918</h3>
 <div class="outline-text-3" id="text-1-1">
-
-<ul>
-<li>Full-load hours.<sup><a class="footref" name="fnr-.1" href="#fn-.1">1</a></sup>
+<ul class="org-ul">
+<li>Full-load hours.<sup><a id="fnr.1" name="fnr.1" class="footref" href="#fn.1">1</a></sup>
 </li>
 <li>How to calculate the CO<sub>2</sub> saved by using EV/PV instead of
-      traditional fossil fuels.
+traditional fossil fuels.
 </li>
-<li>
-</li>
+<li></li>
 </ul>
-
-
+</div>
 </div>
 
-</div>
-
-<div id="outline-container-1-2" class="outline-3">
+<div id="outline-container-sec-1-2" class="outline-3">
 <h3 id="sec-1-2"><span class="section-number-3">1.2</span> 20140922</h3>
 <div class="outline-text-3" id="text-1-2">
-
-<ul>
-<li>PV<sup><a class="footref" name="fnr-.2" href="#fn-.2">2</a></sup>=C/((1+r)<sup>t</sup>)
+<ul class="org-ul">
+<li>PV<sup><a id="fnr.2" name="fnr.2" class="footref" href="#fn.2">2</a></sup>={C/((1+r)<sup>t</sup>)}<sup><a id="fnr.3" name="fnr.3" class="footref" href="#fn.3">3</a></sup>
 </li>
 </ul>
-
-
-
 </div>
 
-<div id="outline-container-1-2-1" class="outline-4">
+<div id="outline-container-sec-1-2-1" class="outline-4">
 <h4 id="sec-1-2-1"><span class="section-number-4">1.2.1</span> Discount rate and Inflation</h4>
 <div class="outline-text-4" id="text-1-2-1">
-
-<ul>
+<ul class="org-ul">
 <li>Comparability
 </li>
 <li>Factors
-<ul>
+<ul class="org-ul">
 <li>Productivity p%/yr
 </li>
 <li>CPI i%/yr
 </li>
 </ul>
-
 </li>
 <li>DR = minimum acceptable profitability
 </li>
 </ul>
-
-
+</div>
 </div>
 
-</div>
-
-<div id="outline-container-1-2-2" class="outline-4">
+<div id="outline-container-sec-1-2-2" class="outline-4">
 <h4 id="sec-1-2-2"><span class="section-number-4">1.2.2</span> Weighted Average Cost of Capital (WACC)</h4>
 <div class="outline-text-4" id="text-1-2-2">
-
-<ul>
+<ul class="org-ul">
 <li>A basic way of estimating DR
 </li>
 <li>Does NOT
-<ul>
+<ul class="org-ul">
 <li>Reflect opportunity cost
 </li>
 </ul>
-
 </li>
-<li>
-</li>
+<li></li>
 </ul>
-
-
+</div>
 </div>
 
-</div>
-
-<div id="outline-container-1-2-3" class="outline-4">
+<div id="outline-container-sec-1-2-3" class="outline-4">
 <h4 id="sec-1-2-3"><span class="section-number-4">1.2.3</span> Company raising capital</h4>
 <div class="outline-text-4" id="text-1-2-3">
-
-<ul>
+<ul class="org-ul">
 <li>Debt
 </li>
 <li>Equity
 </li>
 </ul>
-
-
+</div>
 </div>
 
-</div>
-
-<div id="outline-container-1-2-4" class="outline-4">
+<div id="outline-container-sec-1-2-4" class="outline-4">
 <h4 id="sec-1-2-4"><span class="section-number-4">1.2.4</span> WACC Overview</h4>
 <div class="outline-text-4" id="text-1-2-4">
-
-<ul>
+<ul class="org-ul">
 <li>Does <b>not</b> account for project risk
 </li>
 <li>Does <b>not</b> account for opportunity risk
 </li>
 </ul>
-
-
+</div>
 </div>
 
-</div>
-
-<div id="outline-container-1-2-5" class="outline-4">
+<div id="outline-container-sec-1-2-5" class="outline-4">
 <h4 id="sec-1-2-5"><span class="section-number-4">1.2.5</span> Evaluation Methods</h4>
 <div class="outline-text-4" id="text-1-2-5">
-
-<ul>
+<ul class="org-ul">
 <li>Break Even
 </li>
-<li>
+<li>Net Present Value
+</li>
+<li>internal value of return
+</li>
+<li>Levelized Cost of Energy: constant unit cost of a payment
+stream that has same present value as the total cost of
+building and operating.
 </li>
 </ul>
+</div>
+</div>
+</div>
+
+<div id="outline-container-sec-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> 20140925</h3>
+<div class="outline-text-3" id="text-1-3">
+</div><div id="outline-container-sec-1-3-1" class="outline-4">
+<h4 id="sec-1-3-1"><span class="section-number-4">1.3.1</span> Energy Infrastructure</h4>
+<div class="outline-text-4" id="text-1-3-1">
+<ul class="org-ul">
+<li>large-scale and cheap energy provision is a key ingredient
+</li>
+<li>very messy, very fast
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-3-2" class="outline-4">
+<h4 id="sec-1-3-2"><span class="section-number-4">1.3.2</span> Climate change basics</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<ul class="org-ul">
+<li>we will reach the point no return, if the temperature rises just
+2 degree.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-3-3" class="outline-4">
+<h4 id="sec-1-3-3"><span class="section-number-4">1.3.3</span> Weather vs Climate</h4>
+<div class="outline-text-4" id="text-1-3-3">
+<ul class="org-ul">
+<li></li>
+</ul>
+</div>
+</div>
+</div>
 
 
+<div id="outline-container-sec-1-4" class="outline-3">
+<h3 id="sec-1-4"><span class="section-number-3">1.4</span> 20140928</h3>
+<div class="outline-text-3" id="text-1-4">
+</div><div id="outline-container-sec-1-4-1" class="outline-4">
+<h4 id="sec-1-4-1"><span class="section-number-4">1.4.1</span> Sustainable Energy</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<ul class="org-ul">
+<li>Energy resources
+</li>
+<li>Energy uses
+</li>
+<li>Energy regulation
+</li>
+<li>Climate change and pollution
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-4-2" class="outline-4">
+<h4 id="sec-1-4-2"><span class="section-number-4">1.4.2</span> Masdar Institute's Goal</h4>
+<div class="outline-text-4" id="text-1-4-2">
+<ul class="org-ul">
+<li>Educating Energy Practitioners<sup><a id="fnr.4" name="fnr.4" class="footref" href="#fn.4">4</a></sup>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-4-3" class="outline-4">
+<h4 id="sec-1-4-3"><span class="section-number-4">1.4.3</span> How will we move forward?</h4>
+<div class="outline-text-4" id="text-1-4-3">
+<ul class="org-ul">
+<li>Core set of guiding principles
+</li>
+<li>Ongoing dialogue
+</li>
+<li>Participation of diverse stakeholders and perspectives.
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-4-4" class="outline-4">
+<h4 id="sec-1-4-4"><span class="section-number-4">1.4.4</span> Key Definitions</h4>
+<div class="outline-text-4" id="text-1-4-4">
+<ul class="org-ul">
+<li>Energy: Capacity of a system to do work (“cause external
+action”)
+</li>
+<li>Power: Rate at which work is performed or energy is transmitted
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-4-5" class="outline-4">
+<h4 id="sec-1-4-5"><span class="section-number-4">1.4.5</span> Three Dimensions of Sustainability</h4>
+<div class="outline-text-4" id="text-1-4-5">
+<ul class="org-ul">
+<li>Finance, economy
+</li>
+<li>Equity social development
+</li>
+<li>Ecology environment
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-sec-1-4-6" class="outline-4">
+<h4 id="sec-1-4-6"><span class="section-number-4">1.4.6</span> Sustainable Development</h4>
+<div class="outline-text-4" id="text-1-4-6">
+<ul class="org-ul">
+<li>But the “environment” is where we live; and “development” is
+what we all do in attempting to improve our lot within that
+abode. The two are inseparable.
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
 <div id="footnotes">
 <h2 class="footnotes">Footnotes: </h2>
 <div id="text-footnotes">
-<p class="footnote"><sup><a class="footnum" name="fn-.1" href="#fnr-.1">1</a></sup> Full-load hours: Whereas capacity factor is an indication of
+
+<div class="footdef"><sup><a id="fn.1" name="fn.1" class="footnum" href="#fnr.1">1</a></sup> <p class="footpara">
+Full-load hours: Whereas capacity factor is an indication of
 capacity utilization as a percentage, one also speaks of "full-load
 hours," an especially useful term for dispatchable generators, which
 can be switched on and off – such as biomass, coal, natural gas, and
-nuclear.
-</p>
+nuclear.  
+</p></div>
 
+<div class="footdef"><sup><a id="fn.2" name="fn.2" class="footnum" href="#fnr.2">2</a></sup> <p class="footpara">
+Present Value
+</p></div>
 
-<p class="footnote"><sup><a class="footnum" name="fn-.2" href="#fnr-.2">2</a></sup> Present Value
-</p>
+<div class="footdef"><sup><a id="fn.3" name="fn.3" class="footnum" href="#fnr.3">3</a></sup> <p class="footpara">
+Updated equation. 
+</p></div>
 
-
-
-
-
-
-
+<div class="footdef"><sup><a id="fn.4" name="fn.4" class="footnum" href="#fnr.4">4</a></sup> <p class="footpara">
+We do energy stuff and we are proud of that.
+</p></div>
 
 
 </div>
-</div>
-</div>
-</div>
-
-</div>
-</div>
-</div>
-
-<div id="postamble">
-<p class="date">Date: 2014-09-22T17:19+0400</p>
+</div></div>
+<div id="postamble" class="status">
 <p class="author">Author: Abraham Xiao</p>
-<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.3f with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 24</p>
-<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
-
+<p class="date">Created: 2014-09-28 Sun 18:26</p>
+<p class="creator"><a href="http://www.gnu.org/software/emacs/">Emacs</a> 24.3.1 (<a href="http://orgmode.org">Org</a> mode 8.2.7c)</p>
+<p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
 </html>
