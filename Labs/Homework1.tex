@@ -8,9 +8,17 @@
 % Housekeeping
 \usepackage{amsmath}
 \usepackage{amssymb}
+\usepackage{gensymb}  % For celsius degree symbol
 
 \usepackage{cite}
 \usepackage{algorithmic}
+
+% Theorem config
+\usepackage{ntheorem}
+\newtheorem{Law}{Law}
+
+
+
 \usepackage{array}
 \usepackage{graphicx}
 \graphicspath{{./}{./Figure/}}
@@ -32,11 +40,113 @@
 \section{Question 1}
 \label{sec:question-1}
 
-Life is awesome in the United Arab Emirates.
+Solution: Since we do not consider any heat transfer and neglect
+kinetic energy except out of nozzle, we have the following:
+
+\begin{itemize}
+\item Compressor: $Q~=~\Delta h + W_{t}~=~ 0$, therefore we have $W_{t}~ =~
+  -\Delta h$.\\
+  Evaluate the equation above we have $W_{t}~=~-539.96~(KJ\cdot
+  Kg^{-1})$
+\item Turbine: For the same reason, we have $Q~=~\Delta h +
+  W_{t}~=~ 0$. Therefore $W_{t}~=~ -(933.15 - 1635.8)~=~
+  702.65~(KJ\cdot Kg^{-1})$
+\item Nozzle: As analyzed above, we can reach this equation
+  $Q~=~\Delta h + E_{k}~=~ 0$ where $E_{k}$ stands for the kinetic
+  energy of gases. Thus, $\frac{1}{2}v^{2}~=~ -\Delta h$, evaluate
+  this equation we have exit velocity\\ $v~=~\sqrt{2*283.62*10^{3}}~=~
+  753.2~m/s$
+\item Compressor: If the turbine specific work is completely used to
+  drive the compressor, we have $Q~=~\Delta h + W_{t}$ where
+  $W_{t}=0$. Thus, $Q~=~\Delta h~=~ 1635.8 -
+  800.28~=~835.52~(KJ/Kg)$.\\
+  So the jet efficiency is $\eta~=~\frac{0.5*v^{2}}{q}$, evaluate this
+  equation we have $\eta~=~33.9\%$.
+\item Enthalpy: When $W_{turbine}~=~W_{compressor}$, we have
+  $1635.8-W_{tout}=539.96$, so the turbine outlet enthalpy is
+  $1095.84~(KJ/Kg)$ 
+\end{itemize}
 
 \section{Question 2}
 \label{sec:question-2}
+% Life is awesome in the United Arab Emirates!
+% $E_{in}-E_{out}~=~\Delta E_{system}\quad (kJ)$
 
-Life is awesome in the United Arab Emirates!
-$E_{in}-E_{out}~=~\Delta E_{system}\quad (kJ)$
+From this page \url{https://en.wikipedia.org/wiki/R-410A} we know the
+physical properties of R-410A. Since the boiling point for R-410A is
+$-48.5\celsius$, so it will stay in gas form all the circulation.
+\par
+For easy calculation we assume the volume of R-410A is constant. Since
+the flow rate is $0.05~Kg/s$, we use flow time $t~=~1s$.
+\begin{itemize}
+\item Thus $m~=~0.05 * 1~=~0.05~Kg$
+  \begin{equation}
+    \label{eq:1}
+    W_{comp}-Q_{comp}~=~m*(h_{state6}-h_{state1})
+  \end{equation}
+  This is inferred from 1st law of
+  thermaldynamics. Evaluate~\eqref{eq:1} we have heat transfer from the
+  compressor is $(377-384)*0.05~=~4.65~KJ$.
+\item Following a similar scheme, we have the heat transfer in the
+  condenser is $(134-367)*0.05~=~11.65~KJ$
+\item As above, the expansion valve does not change the enthalpy
+  during a throttling process, so we have
+  \begin{equation}
+    \label{eq:2}
+    Q_{evap}~=~m*(h_{state5}-h_{state4})
+  \end{equation}
+  Evaluate~\eqref{eq:2} we have $Q_{evap}~=~7.3~KJ$
+\item From the question we have $W_{in}~=~P_{comp}*t~=~5~KJ$, and
+  $Q_{cond}=11.65~KJ$. Thus we have,
+  \begin{equation}
+    \label{eq:3}
+    COP_{HP}~=~\frac{Q_{cond}}{W_{in}=W_{comp}}
+  \end{equation}
+  Evaluate the above equation we have $COP~=~2.33$
+\end{itemize}
+
+\section{Question 3}
+\label{sec:question-3}
+
+From general physics background we have:
+\begin{itemize}
+\item $m_{water}~=~100*10^{-3}*0.001043^{-1}~=~95.87~Kg$
+\item For the turbine we can infer $Q~=~\Delta h+ W_{t}$, then
+  \begin{equation}
+    \label{eq:4}
+    W_{t}~=~-\Delta h~=~-(2675.5-2763.5)~=~88 KJ/Kg
+  \end{equation}
+  Therefore the total turbine work is $88 * 95.87~=~9436.56~KJ$
+\item For burner we have $Q~=~\Delta h$.
+  Evaluate~\eqref{eq:4} we have total heat equals
+  $(2763.5-417.36)*95.87~=~224924.4~KJ$ 
+\end{itemize}
+
+\section{Question 4}
+\label{sec:question-4}
+
+\begin{Law}
+  It is impossible to construct a device that operates in a cycle and
+  produces no effect other than the transfer of heat from a
+  lower-temperature body to a higher-temperature body. 
+\end{Law}
+From this expression of $2^{nd}$ law of thermaldynamics we can easily
+reach the conclusion that this machine is \textbf{possible but
+  irreversible}.
+
+\section{Question 5}
+\label{sec:question-5}
+
+For the three solids mentioned in the question, we have:
+\begin{itemize}
+\item Silicon: $Q~=~C*m*\Delta T$, where $C$ is the heat capacity (the
+  rest of this question use same notation), $m$ is the mass of solid,
+  and $\Delta T$ stands for the temperature change.\\
+  Evaluate this equation we have
+  $Q_{silicon}~=~50*10^{-3}*55*0.712*10^{3}~=~1958~J$
+\item Copper: Following the same algorithm, we have
+  $Q_{copper}~=~20*0.385*55~=~423.5~J$
+\item Polyvinyl chloride: $Q_{poly}~=~1.0049*50*55~=~2763.475~J$
+\end{itemize}
+
 \end{document}
