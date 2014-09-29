@@ -85,7 +85,66 @@
 
 ** 20140929
 
-*** 
+*** System Analysis
+    - Build a power plant.
+      - Type
+      - price
+      - externalities
+      - competitors
+    - ANSWERS a question
+      - define problem
+      - define the system
+      - best approach
+      - define boundaries
+      - define options
+      - create system map
+      - IMPLEMENT SA APPROACH
+        - verify
+        - calibrate
+        - validate
+      - Test options
+      - Make recommendations
+      - *Simply put*, it's just Mathematical Modeling for Real World.
+
+*** Risk Analysis
+    - TQM, Total Quality Management
+      - Plan
+      - Do
+      - Check
+      - Act
+    - Lifecycle Analysis
+      - Comprehensive cradle-to-grave analysis
+      - This can be very time/resource consuming. You can use existing
+        databases.
+    -
+
+*** Global Warming from SD perspective
+    - Problem
+    - Key variables (start with simple)
+      - 
+    - Diverse and response
+    - Drivers of Societal Change
+
+*** Principles of Sustainable Development
+    - Clarity
+    - Holistic perspective
+    - Essential Elements
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
