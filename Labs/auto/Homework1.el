@@ -1,5 +1,8 @@
 (TeX-add-style-hook "Homework1"
  (lambda ()
+    (LaTeX-add-labels
+     "sec:question-1"
+     "sec:question-2")
     (TeX-run-style-hooks
      "hyperref"
      "url"
