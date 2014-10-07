@@ -13,7 +13,12 @@
      "eq:5"
      "eq:6"
      "eq:7"
-     "sec:renewables-1")
+     "sec:renewables-1"
+     "eq:8"
+     "eq:9"
+     "eq:10"
+     "eq:11"
+     "sec:economic-analysis")
     (TeX-run-style-hooks
      "hyperref"
      "url"

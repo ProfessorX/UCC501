@@ -21,4 +21,10 @@ rho = 656
 NG_mass = NG_cm3 * rho
 CO2_mass = NG_mass * 44 / 16
 
+%% Renewables
+ene_gas = NG_mbtu * 1.05506 * 1e9
+ene_gas_useful = ene_gas * 0.40 * 0.92
+ene_gas_useful_to_solar = ene_gas_useful * 0.05
+ene_solar = ene_gas_useful_to_solar / (3.6 * 1e9 * 1700 * 25)
+
 
