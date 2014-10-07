@@ -19,6 +19,7 @@
 \newtheorem{Law}{Law}
 
 \usepackage{array}
+\usepackage{listings}
 \usepackage{graphicx}
 \graphicspath{{./}{./Figure/}}
 \usepackage{url}
@@ -36,6 +37,89 @@
 \maketitle{}
 % Fuck that.
 
-Life is awesome in the United Arab Emirates!
+\section{Energy Scales, CO2  Emissions and Renewables}
+\label{sec:question-1}
+
+\subsection{Energy Scales}
+\label{sec:energy-scales}
+
+% Life is fucking awesome in United Arab Emirates!
+\begin{itemize}
+\item Natural gas consumption year 2012: in Billion Cubic Feet:
+  2235.169. 
+\item For natural gases btu we have
+  \begin{equation}
+    \label{eq:1}
+    1cf\rightarrow 1027 Btu
+  \end{equation}
+  source:
+  \url{http://www.aga.org/KC/ABOUTNATURALGAS/ADDITIONAL/Pages/HowtoMeasureNaturalGas.aspx},
+  use MATLAB to convert units, we have
+  \begin{equation}
+    \label{eq:2}
+    2012~Yearly~btu~=~2235.169*10^{9}*1027
+  \end{equation}
+  Evaluate the equation we get $2.2955*10^{15}~Btu$, divided by
+  millions we get $2.2955*10^{9}~MBtu$.
+\item From this unit conversion site
+  \url{http://www.eia.gov/cfapps/ipdbproject/docs/units.cfm} we have
+  \begin{equation}
+    \label{eq:3}
+    MTOE~=~MBtu * 0.02520 * 10^{-6}
+  \end{equation}
+  Evaluate the above equation we have $57.8471 MTOE$
+\item Similarly we have $1 MBtu~=~1.05506*10^{9} Joules$ and $1
+  KWh~=~3.6*10^{6} Joules$, thus
+  \begin{equation}
+    \label{eq:4}
+    2012~Yearly~GKWh~=~2.2955*10^{9} * 1.05506 *10^{9} / (3.6*10^{6} *
+    10^{9}) 
+  \end{equation}
+  Evaluate the above equation we have $672.7527~GKWh$
+
+\end{itemize}
+
+\subsection{CO2 Emissions}
+\label{sec:co2-emissions}
+
+\begin{itemize}
+\item Assume complete combustion, we have $2235.169~Bcf$ natural gas
+  burned in UAE for year 2012. Assume under normal temperature and
+  pressure the natural gas is measured, we google the bold texts
+  \textbf{natural gas density} and get the following:
+\begin{verbatim}
+Density
+0.656 g/L at 25 °C, 1 atm; 0.716 g/L at 0 °C, 1 atm;
+0.42262 g cm−3; (at 111 K)
+\end{verbatim}
+  Since we assume normal density, we use $\rho~=~0.656 g/L~=~656
+  kg/m^{3}$. Thus we have the total mass of CO2 burned in year 2012
+  \begin{equation}
+    \label{eq:5}
+    Mass~of~CH_{4}~=~4.1525*10^{13} kg
+  \end{equation}
+  Since the background is complete combustion, from chemistry we have
+  \begin{equation}
+    \label{eq:6}
+    CH_{4}~+~2O_{2}~=~ CO_{2}~+~2H_{2}O
+  \end{equation}
+  and introduce a concept from chemistry, \textbf{molecular weight} we
+  have 
+  \begin{equation}
+    \label{eq:7}
+    Mass~of~CO_{2}~=~m_{CH_{4}}*\frac{M_{CO_{2}}}{M_{CH_{4}}}
+  \end{equation}
+  where $m_{CH_{4}}$ is the mass, the $M_{CH_{4}}$ is the molecular
+  weight. This equation is deducted by \textbf{carbon equilibrium}
+  under complete combustion.\\
+  Evaluate equation (\ref{eq:7}) we have $m_{CO_{2}}~=~1.1419 *
+  10^{14} kg$
+
+\end{itemize}
+
+\subsection{Renewables}
+\label{sec:renewables-1}
+
+Since we mentioned \textbf{in total} in the question,  my answer 
 \end{document}
 

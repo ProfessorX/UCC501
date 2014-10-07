@@ -1,19 +1,7 @@
-(TeX-add-style-hook "HW2"
+(TeX-add-style-hook "_region_"
  (lambda ()
     (LaTeX-add-environments
      "Law")
-    (LaTeX-add-labels
-     "sec:question-1"
-     "sec:energy-scales"
-     "eq:1"
-     "eq:2"
-     "eq:3"
-     "eq:4"
-     "sec:co2-emissions"
-     "eq:5"
-     "eq:6"
-     "eq:7"
-     "sec:renewables-1")
     (TeX-run-style-hooks
      "hyperref"
      "url"
