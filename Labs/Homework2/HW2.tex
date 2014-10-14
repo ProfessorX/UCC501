@@ -19,7 +19,24 @@
 \newtheorem{Law}{Law}
 
 \usepackage{array}
+
+\usepackage{xcolor}
 \usepackage{listings}
+% \lstset{breaklines}	
+\lstset{
+numbers=left,
+numberstyle=\tiny,
+%commentstyle=\color{red!50!green!50!blue!50},
+% rulesepcolor=\color{red!20!green!20!blue!20},escapeinside=``,
+%xleftmargin=2em,
+%xrightmargin=2em,
+%aboveskip=1em,
+backgroundcolor=\color{red!3!green!3!blue!3},
+basicstyle=\small\ttfamily,
+stringstyle=\color{purple},
+keywordstyle=\color{blue!80}\bfseries,
+commentstyle=\color{olive}}
+
 \usepackage{graphicx}
 \graphicspath{{./}{./Figure/}}
 \usepackage{url}
@@ -199,8 +216,16 @@ close to 300MW. So to be practical we here use \texttt{Scale =
 \subsection{IRR Calculation}
 \label{sec:irr-calculation}
 
-There is something wrong either with the question or with my
-calculation. But I followed the slides so...Well, this is Masdar.
+% There is something wrong either with the question or with my
+% calculation. But I followed the slides so...Well, this is Masdar.
+\begin{itemize}
+\item IRR means the discount rate which balances income and
+  outcome. In \textbf{Financial
+    Toolbox}\footnote{\url{http://www.mathworks.com/help/finance/irr.html}}
+  of MATLAB, there is the irr function provided.
+\item Following the codes implemented in MATLAB in
+  \texttt{internal\_rr.m} we have $IRR~=~0.13$.
+\end{itemize}
 
 
 \section{Vehicle Kinetics}
@@ -260,6 +285,230 @@ calculation. But I followed the slides so...Well, this is Masdar.
 
 \section{Reference}
 \label{sec:reference}
+
+All codes are in the \textbf{public domain}, which means they can be
+found at
+\url{https://github.com/ProfessorX/UCC501/tree/master/Labs/Homework2}. 
+\subsection{calc.m}
+\label{sec:question-1-1}
+
+\begin{lstlisting}[language=Matlab]
+% UCC501 HW2 Calc
+
+%% BTU
+NG_cf = 2235.169 * 1e9
+NG_btu = NG_cf * 1027
+NG_mbtu = NG_btu * 1e-6
+
+%% TOE
+NG_toe = NG_mbtu * 0.02520
+NG_mtoe = NG_toe * 1e-6
+
+%% GKWh
+NG_GKwh = NG_mbtu * 1.05506 *1e9 / (3.6*1e6 * 1e9)
+% GKwh = MBtu * 0.94782*1e9 / (3.6*1e6 * 1e9) wrong
+
+% just run the above scripts in MATLAB
+
+%% CH4 mass
+NG_cm3 = NG_cf * 0.02832
+rho = 656
+NG_mass = NG_cm3 * rho
+CO2_mass = NG_mass * 44 / 16
+
+%% Renewables
+ene_gas = NG_mbtu * 1.05506 * 1e9
+ene_gas_useful = ene_gas * 0.40 * 0.92
+ene_gas_useful_to_solar = ene_gas_useful * 0.05
+ene_solar = ene_gas_useful_to_solar / (3.6 * 1e9 * 1700 * 25)
+
+
+
+\end{lstlisting}
+
+\subsection{eco\_ana.m}
+\label{sec:eco_ana.m}
+
+\begin{lstlisting}[language=Matlab]
+%% Levelized cost of energy
+
+% Housekeeping
+solar_scale = 300 * 1e3
+cost_unit_capital = 2700  % in dollars/Kilowatt
+debt_return = 0.03
+debt_ratio = 0.7
+equity_return = 0.15
+equity_ratio = 0.3
+
+const_year = 1
+oper_year = 25
+n = const_year + oper_year
+
+annu_maintain_rate = 0.05
+land_unit_scale = 7.9  % this is is per MW
+acre_to_hec = 0.404686
+land_unit_compen = 1800  % this is in year
+
+% Yet more housekeeping
+annu_hour = 365 * 24  % assume regular 365 days/year
+
+% Life is fucking awesome in AE
+total_capital_solar = solar_scale * cost_unit_capital
+discount_wacc = debt_return*debt_ratio + equity_return*equity_ratio
+alpha = 1 / (1 + discount_wacc)
+
+% npv series (for the rate) = sum (a+a^2+a^3+...+a^26)
+npv_rate_series = (alpha * (1-alpha^n))/(1-alpha) % This is the
+                                                  % summing up, you
+                                                  % ESM people!
+npv_total_capital = total_capital_solar / npv_rate_series % This
+                                                          % turned
+                                                          % out to
+                                                          % be annual
+annu_maintain_cost = annu_maintain_rate * total_capital_solar
+total_maintain_cost = annu_maintain_cost * 26  % this may be 25,
+                                               % then we need to
+                                               % re-cal npv series
+                                               % for it.
+npv_total_maintain = total_maintain_cost / npv_rate_series
+
+solar_land_area = land_unit_scale * 300  % acres and MW
+annu_land_compen = solar_land_area * 1800 * acre_to_hec
+total_land_compen = annu_land_compen * 26
+npv_total_land = total_land_compen / npv_rate_series
+
+%% Time to pay
+annu_all_cost = npv_total_capital + annu_maintain_cost + ...
+    annu_land_compen
+levelized_cost = annu_all_cost / (annu_hour * solar_scale)
+
+% rate_discount = 1/1.066
+% series_rate_dr = 
+(rate_discount * (1 - rate_discount^26)) / (1 - rate_discount)
+
+\end{lstlisting}
+
+
+\subsection{internal\_rr.m}
+\label{sec:internal_rr.m}
+
+\begin{lstlisting}[language=Matlab]
+%% Levelized cost of energy
+
+% Housekeeping
+solar_scale = 300 * 1e3  % in KW
+cost_unit_capital = 2700  % in dollars/Kilowatt
+debt_return = 0.03
+debt_ratio = 0.7
+equity_return = 0.15
+equity_ratio = 0.3
+
+const_year = 1
+oper_year = 25
+n = const_year + oper_year
+
+annu_maintain_rate = 0.05
+land_unit_scale = 7.9  % this is is per MW
+acre_to_hec = 0.404686
+land_unit_compen = 1800  % this is in year
+
+% Yet more housekeeping
+% annu_hour = 365 * 24  % assume regular 365 days/year
+annu_hour = 1700
+
+
+%% The battle begins
+total_capital_solar = solar_scale * cost_unit_capital  % in dollars
+discount_wacc = debt_return*debt_ratio + equity_return*equity_ratio
+alpha = 1 / (1 + discount_wacc)
+
+solar_land_area = land_unit_scale * 300  % acres and MW
+annu_land_compen = solar_land_area * 1800 * acre_to_hec
+
+%% Time to tariff
+unit_tariff = 0.3
+annu_tariff = unit_tariff * annu_hour * solar_scale
+
+%% TOTO or Total
+total_capital = [total_capital_solar, zeros(1, 25)]
+total_maintain = 
+[0, annu_maintain_rate*total_capital_solar .* ones(1, ...
+                                                  25)]
+total_land = annu_land_compen .* ones(1, 26)
+total_tariff = [0, annu_tariff .* ones(1, 25)]
+
+% Net return
+total_net_return = 
+total_tariff - (total_capital + total_land + total_maintain)
+
+irr(total_net_return)  % this requires Finance toolbox
+
+\end{lstlisting}
+
+\subsection{vehicle\_power.m}
+\label{sec:vehicle_power.m}
+
+\begin{lstlisting}[language=Matlab]
+
+%% Parameters
+velocity = 20
+d_trip  = 180 * 10^3
+rho_air = 1.2
+aero_area = 2.45
+co_drag = 0.28
+mass_vehicle = 1550
+gravity = 9.79
+co_rolling = 0.01
+
+% Yet more housekeeping
+
+
+%% 180Km Propulsion power
+power_trip = (mass_vehicle * velocity^3)/(2 * d_trip) + 0.5 * rho_air ...
+    * aero_area * co_drag * velocity^3 + mass_vehicle * gravity * ...
+    co_rolling * velocity
+
+
+%% Annual Traveler
+d_annual = 40 * 1e3 * 1e3  % in meters
+time_annual = 40 * 1e3 / 72 % in hours
+% This part is not valid
+% $$$ power_annual = (mass_vehicle * velocity^3)/(2 * d_annual) + 0.5 * ...
+% $$$     rho_air * aero_area * co_drag * velocity^3 + mass_vehicle * ...
+% $$$     gravity * co_rolling * velocity
+unit_fuel_con = 0.08  % in L/Km
+rho_petrol = 0.755  % Kg/L
+cars_abud = 600000
+
+fuel_volume_annu = d_annual * 1e-3 * unit_fuel_con   % convert d_annu to
+                                             % Km, result in Litre
+fuel_mass_annu = rho_petrol * fuel_volume_annu
+heat_petrol_unit = 47.30 * 1e6  % MJ/Kg
+heat_petrol_annu = fuel_mass_annu * heat_petrol_unit  % in
+                                                      % Joules per car
+energy_petrol_annu = heat_petrol_annu / (3.6 * 1e6 * 1e3)  % in MWh
+
+
+%% Year by year
+mass_petrol_carbon = (12 / 14.1) * fuel_mass_annu
+mass_carbon_dio = (44 / 12) * mass_petrol_carbon  % Carbon
+                                                  % Equilibrium
+energy_vehicle_abud = energy_petrol_annu * cars_abud  % in MWh
+mass_carbon_dio_abud = mass_carbon_dio * cars_abud  % in Kg
+%% How much solar must a man consume?
+% Yet more and more housekeeping
+solar_flh_uae = 1700
+
+energy_solar_five = 0.5 * energy_vehicle_abud
+energy_solar_annu = energy_solar_five / 5
+power_solar_annu = energy_solar_annu / solar_flh_uae  % for power,
+                                                      % we mean Watts
+
+
+
+
+\end{lstlisting}
+
 
 
 \end{document}

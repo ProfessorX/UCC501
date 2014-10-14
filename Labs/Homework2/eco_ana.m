@@ -50,14 +50,7 @@ annu_all_cost = npv_total_capital + annu_maintain_cost + ...
     annu_land_compen
 levelized_cost = annu_all_cost / (annu_hour * solar_scale)
 
-%% Time to tariff
-unit_tariff = 0.3
-annu_tariff = unit_tariff * annu_hour * solar_scale
 
-
-%% Equation
-annu_capital_new = annu_tariff - annu_maintain_cost - ...
-    annu_land_compen
 
 
 

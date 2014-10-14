@@ -29,12 +29,17 @@
      "sec:annu-vehicle-energy"
      "sec:abu-dhabi-car"
      "sec:panel-installment"
-     "sec:reference")
+     "sec:reference"
+     "sec:question-1-1"
+     "sec:eco_ana.m"
+     "sec:internal_rr.m"
+     "sec:vehicle_power.m")
     (TeX-run-style-hooks
      "hyperref"
      "url"
      "graphicx"
      "listings"
+     "xcolor"
      "array"
      "ntheorem"
      "algorithmic"
