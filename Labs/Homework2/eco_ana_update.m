@@ -1,0 +1,1 @@
+disp('Life is awesome!')

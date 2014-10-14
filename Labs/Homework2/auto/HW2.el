@@ -18,7 +18,16 @@
      "eq:9"
      "eq:10"
      "eq:11"
-     "sec:economic-analysis")
+     "sec:economic-analysis"
+     "sec:lcoe-calculation"
+     "eq:12"
+     "eq:13"
+     "eq:14"
+     "sec:irr-calculation"
+     "sec:vehicle-kinetics"
+     "sec:propulsion-power"
+     "sec:annu-vehicle-energy"
+     "sec:reference")
     (TeX-run-style-hooks
      "hyperref"
      "url"

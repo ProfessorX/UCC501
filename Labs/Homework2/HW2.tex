@@ -159,6 +159,88 @@ $m1_{co_{2}}~=~5.7097 * 10^{12} kg$.
 \section{Economic Analysis}
 \label{sec:economic-analysis}
 
-Life is fucking awesome in the United Arab Emirates.
+% Life is fucking awesome in the United Arab Emirates. Let the killing
+% begin. 
+
+\subsection{LCOE Calculation}
+\label{sec:lcoe-calculation}
+
+From section \ref{sec:question-1} we have the scale of solar farm is
+close to 300MW. So to be practical we here use \texttt{Scale =
+  300MW}.
+\begin{itemize}
+\item The whole calculation is done through MATLAB programming,
+  therefore, to save pages, we do not repeat the values. We list
+  relevant equations here.
+% \item Life is fucking awesome in the United Arab Emirates!
+\item
+  \begin{equation}
+    \label{eq:12}
+    Total~Capital~Cost~=~Unit~Capital~Cost * Solar~Farm~Scale
+  \end{equation}
+\item From the values we have, we can use WACC as a \textbf{pretty
+    rough} estimation of \textbf{project annual discount rate}. It is
+  also listed in the UAE bureau of statistics the expected CPI of next
+  5 years, we would like to do another estimate adding this value, if
+  possible. 
+  \begin{equation}
+    \label{eq:13}
+    WACC~=~(debt~return*debt~ratio)+(equity~return*equity~ratio)
+  \end{equation}
+\item The remaining part of question is self-evident in the codes as
+  can be seen in the reference link. Following the program, we have
+  \begin{equation}
+    \label{eq:14}
+    Levelized~cost~=~0.0412~\$/KWh
+  \end{equation}
+
+\end{itemize}
+
+\subsection{IRR Calculation}
+\label{sec:irr-calculation}
+
+There is something wrong either with the question or with my
+calculation. But I followed the slides so...Well, this is Masdar.
+
+
+\section{Vehicle Kinetics}
+\label{sec:vehicle-kinetics}
+
+\subsection{Propulsion Power}
+\label{sec:propulsion-power}
+
+\begin{itemize}
+\item From the question we have all the values needed, so just
+  evaluate the equation we have $P_{v}~=~6.2321*10^{3}~W$. The whole
+  calculation code is shown in reference as well as the link.
+\end{itemize}
+
+\subsection{Annual Vehicle Energy Consumption}
+\label{sec:annu-vehicle-energy}
+% 8.4 Litre/ 100km
+% H/C = 2.25
+\begin{itemize}
+\item For this question I tried to replace the $d$ (distance between
+  stops) with $40,000~Km$ but it did not work out as
+  expected. Therefore we need to consider this problem in a
+  \emph{macro} scale.
+\item Since the given mass is $1440Kg$ we can infer that the type of
+  engine is a $2.5L$ one. From the manual and
+  Wikipedia\footnote{\url{http://en.wikipedia.org/wiki/Toyota_Camry_(XV50)}}
+  we have the combined fuel consumption of around
+  $8L/100Km$. Moreover, we can get the standard reference density of
+  marketable gasoline $0.755Kg/L$. 
+\item The rest part is and only is calculation, and that is reflected
+  in the source code.
+\end{itemize}
+
+
+\section{Reference}
+\label{sec:reference}
+
+
 \end{document}
+
+TODO: 
+#1 Add reference link to your codes since the embedding is ugly.
 
