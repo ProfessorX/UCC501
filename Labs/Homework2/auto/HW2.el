@@ -27,6 +27,8 @@
      "sec:vehicle-kinetics"
      "sec:propulsion-power"
      "sec:annu-vehicle-energy"
+     "sec:abu-dhabi-car"
+     "sec:panel-installment"
      "sec:reference")
     (TeX-run-style-hooks
      "hyperref"
