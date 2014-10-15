@@ -26,6 +26,7 @@ annu_hour = 1700
 total_capital_solar = solar_scale * cost_unit_capital  % in dollars
 discount_wacc = debt_return*debt_ratio + equity_return*equity_ratio
 alpha = 1 / (1 + discount_wacc)
+npv_series = alpha .^ [1:26]
 
 solar_land_area = land_unit_scale * 300  % acres and MW
 annu_land_compen = solar_land_area * 1800 * acre_to_hec
@@ -41,7 +42,18 @@ total_maintain = [0, annu_maintain_rate*total_capital_solar .* ones(1, ...
 total_land = annu_land_compen .* ones(1, 26)
 total_tariff = [0, annu_tariff .* ones(1, 25)]
 
-% Net return
+%% Level, Angel or Demon
+total_cost = total_capital +total_land + total_maintain
+npv_cost = total_cost .* npv_series
+annu_work = solar_scale * annu_hour  % in KWh
+total_work = [0, annu_work * ones(1, 25)]
+npv_work = total_work .* npv_series
+
+levelized_cost = sum(npv_cost) / sum(npv_work)
+
+
+
+%% Net return
 total_net_return = total_tariff - (total_capital + total_land + total_maintain)
 
 irr(total_net_return)  % this requires Finance toolbox

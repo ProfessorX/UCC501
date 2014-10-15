@@ -31,8 +31,7 @@
      "sec:panel-installment"
      "sec:reference"
      "sec:question-1-1"
-     "sec:eco_ana.m"
-     "sec:internal_rr.m"
+     "sec:economic_analysis.m"
      "sec:vehicle_power.m")
     (TeX-run-style-hooks
      "hyperref"
