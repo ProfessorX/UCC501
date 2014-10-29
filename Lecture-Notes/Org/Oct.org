@@ -36,4 +36,36 @@
     -
 
 *** Environmental and Sustainability issues
+    -
+
+*** Sustainable Bioenergy
+    - water use
+    - land use
+    - fertilizer use
+
+** 20141016 Hydropower
+
+** 20141020 Geothermal
+
+** 20141023 Solar Energy
+
+*** Non-concentrated Solar technologies
+    - Solar Domestic Hot water
+    - solar air panels
+    - trombe wall
+    - solar cooling
+    -
+
+*** Concentrated Solar Technologies
+    - Concentrated Photovoltaic (high efficiency, smaller area for
+      same courant)
+    - Concentrated Solar Power (CSP)
+    - linear fresnel reflector
+    - power tower
+    - parabolic dish stirling
+    - double reflection systems
     - 
+
+
+
+*** TODO Discussion whether we need a PUMP or not.
