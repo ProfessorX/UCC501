@@ -129,9 +129,9 @@ events.
   boxes''. Mathematically speaking,
   \begin{equation}
     \label{eq:5}
-    P~=~C^{20}_{1}/C^{100}_{1}
+    P~=~1-(0.01)^{20}
   \end{equation}
-  Evaluating equation~\eqref{eq:5} we can get $P=0.20$.
+  Evaluating equation~\eqref{eq:5} we can get $P=0.18$.
 \end{itemize}
 
 \subsection{Does it rain often?}
@@ -169,14 +169,56 @@ events.
     \label{eq:6}
     T=\frac{n+0.12}{i-0.44}
   \end{equation}
-  As we can see from figure~\ref{fig:rain-ams}, $i=9$ when sorted the
-  Annual Maximum Series. Moreover, $n=21$ indicates the years
-  considered. With these values we evaluate equation~\eqref{eq:6}
-  could get $T=2.4673$.
-\item Since $T=2.4673$ we can get probability of occurrence
-  $P=\frac{1}{T}$, thus $P=0.4053$.
-\item The value should be BALABALA, since we require a $50\%$
-  probability of exceedance.
+  % As we can see from figure~\ref{fig:rain-ams}, $i=9$ when sorted the
+  % Annual Maximum Series. Moreover, $n=21$ indicates the years
+  % considered. With these values we evaluate equation~\eqref{eq:6}
+  % could get $T=2.4673$.
+% \item Since $T=2.4673$ we can get probability of occurrence
+%   $P=\frac{1}{T}$, thus $P=0.4053$.
+% \item The value should be BALABALA, since we require a $50\%$
+%   probability of exceedance.
+  From $P=\frac{1}{T}$ we get
+  \begin{equation}
+    \label{eq:13}
+    P=\frac{i-0.44}{n+0.12}
+  \end{equation}
+\item Put all these equations into MATLAB codes, we can get the
+  probability of recurrence as follows:
+\begin{verbatim}
+
+  Columns 1 through 16
+
+    0.0265    0.0739    0.1212    0.1686    0.2159    0.2633    0.3106
+    0.3580    0.4053    0.4527    0.5000    0.5473    0.5947    0.6420
+    0.6894    0.7367
+
+  Columns 17 through 21
+
+    0.7841    0.8314    0.8788    0.9261    0.9735
+
+\end{verbatim}
+\item The return periods are just the reverse of probability of
+  recurrence, as per below.
+\begin{verbatim}
+Columns 1 through 16
+
+   37.7143   13.5385    8.2500    5.9326    4.6316    3.7986    3.2195
+    2.7937    2.4673    2.2092    2.0000    1.8270    1.6815    1.5575
+    1.4505    1.3573
+
+  Columns 17 through 21
+
+    1.2754    1.2027    1.1379    1.0798    1.0272
+\end{verbatim}
+\item 
+  \begin{figure}
+    \centering
+    \includegraphics[scale=0.3]{rain2}
+    \caption{Probability of Recurrence}
+    \label{fig:prob-recur}
+  \end{figure}
+  Therefore from figure~\ref{fig:prob-recur} we can infer $145.7mm$ is
+  the rainfall of $50\%$ exceedance.
 \end{itemize}
 
 \section{Gone with the Wind}
@@ -277,8 +319,77 @@ events.
 \label{sec:all-solar-leads}
 
 \begin{itemize}
-\item 
+\item The major difference lies in the way to capture the solar power
+  and transform it into electricity---which is at least one of the
+  building blocks of modern industry.
+\item Solar Photovoltaic does the transformation directly by way of
+  semiconductors. The key part is that when temperature rises, the
+  electron jumps out of its default orbit therefore forms the current.
+\item Concentrating Solar Power (CSP) does the transformation to
+  electricity in a passive way. The intermediate part is mechanical,
+  like turbines or other engines. 
 \end{itemize}
 
+\subsection{Is Solar Energy Really the Ultimate Solution?}
+\label{sec:solar-energy-really}
+
+\begin{itemize}
+\item Let the solar array size be $x$, then following the assumption
+  given in this question, we have
+  \begin{equation}
+    \label{eq:11}
+    x*4.5*365*0.7~=~11000*0.6
+  \end{equation}
+  Solve this equation we get $x=5.7404$.
+\item Since the present technology (as given in question, those solar
+  panels in lab are \textbf{way too} expensive) requires us to put 5
+  solar panels to generate $1kW$ power, we need $5*x$ solar
+  panels. Evaluating the function we get $28.7019$, in practice it
+  should be $29$ or $30$ solar panels to meet the need.
+\end{itemize}
+
+
+\section{Chernobyl}
+\label{sec:chernobyl}
+
+\subsection{Smaller than Smaller}
+\label{sec:smaller-than-smaller}
+
+\begin{itemize}
+\item To be short and in Dr. Youssef's rhetoric, fussion is ``marriage''
+  and fission is ``divorce''.
+\item To be specific, Fission is a reaction when the nucleus of an
+  atom, having captured a neutron, splits into two or more nuclei, and
+  in so doing, releases a significant amount of energy as well as more
+  neutrons.  Fusion is a process where nuclei collide and join
+  together to form a heavier atom, usually deuterium and tritium. When
+  this happens a considerable amount of energy gets released at
+  extremely high
+  temperatures\footnote{\url{http://www.iea.org/topics/nuclearfissionandfusion/}}. 
+\end{itemize}
+
+\subsection{Decay, Mortal and Immortal}
+\label{sec:decay-mort-immort}
+
+\begin{itemize}
+\item $^{245}_{96}Cm\rightarrow ^{243}_{94}Pu~+~^{4}_{2}He$ The so
+  called alpha stuff is just $^{4}_{2}He$.
+\item $^{139}_{51}Sb$
+\item For this problem let the initial quantity be $N_{0}$ and
+  half-life quantity be $N_{\frac{1}{2}}$, half-life of half-life
+  quantity be $N_{\frac{1}{4}}$. Therefore we should be able to get
+  equations as follows, where $\lambda$ is a constant, $t_{1}$ and
+  $t_{2}$ are the corresponding time to decay.
+  \begin{equation}
+    \label{eq:12}
+    \begin{split}
+      N_{\frac{1}{2}} & = e^{-\lambda t_{1}}\\[4pt]
+      N_{\frac{1}{4}} & = e^{-\lambda t_{2}}
+    \end{split}
+  \end{equation}
+\item According to the question, we normalize the parameters, where
+  $N_{\frac{1}{2}}=\frac{1}{2}$ and $N_{\frac{1}{4}}=\frac{1}{4}$ and
+  $t_{1}=28.8$, solve equation~\eqref{eq:12} we get $t_{2}=166.198$ years.
+\end{itemize}
 \end{document}
 

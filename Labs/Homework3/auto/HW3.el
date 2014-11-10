@@ -31,6 +31,8 @@
     "sec:does-it-rain"
     "fig:rain-ams"
     "eq:6"
+    "eq:13"
+    "fig:prob-recur"
     "sec:it-there.-air"
     "sec:good-bad"
     "sec:how-powerful-could"
@@ -39,7 +41,13 @@
     "eq:9"
     "eq:10"
     "sec:how-did-red"
-    "sec:all-solar-leads")
+    "sec:all-solar-leads"
+    "sec:solar-energy-really"
+    "eq:11"
+    "sec:chernobyl"
+    "sec:smaller-than-smaller"
+    "sec:decay-mort-immort"
+    "eq:12")
    (LaTeX-add-environments
     "Law")))
 
