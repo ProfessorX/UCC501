@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/dev/Debian) (preloaded format=xelatex 2014.11.4)  10 NOV 2014 15:56
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/dev/Debian) (preloaded format=xelatex 2014.11.4)  10 NOV 2014 16:06
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -497,9 +497,8 @@ Overfull \hbox (9.87488pt too wide) in paragraph at lines 158--158
 
 File: annums_bar.png Graphic file (type QTm)
 <use  "annums_bar.png" >
-Overfull \hbox (72.57169pt too wide) in paragraph at lines 162--163
- [][] 
- []
+
+LaTeX Warning: Float too large for page by 95.07986pt on input line 165.
 
 
 Overfull \hbox (71.62491pt too wide) in paragraph at lines 199--199
@@ -527,9 +526,8 @@ Overfull \hbox (71.62491pt too wide) in paragraph at lines 212--212
 
 File: rain2.png Graphic file (type QTm)
 <use  "rain2.png" >
-Overfull \hbox (72.57169pt too wide) in paragraph at lines 216--217
- [][] 
- []
+
+LaTeX Warning: Float too large for page by 95.07986pt on input line 219.
 
 [5] [6] [7] [8] [9]
 \tf@thm=\write4
