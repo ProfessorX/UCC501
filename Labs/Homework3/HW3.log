@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/dev/Debian) (preloaded format=xelatex 2014.11.4)  10 NOV 2014 16:06
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015/dev/Debian) (preloaded format=xelatex 2014.11.4)  10 NOV 2014 17:17
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -501,27 +501,27 @@ File: annums_bar.png Graphic file (type QTm)
 LaTeX Warning: Float too large for page by 95.07986pt on input line 165.
 
 
-Overfull \hbox (71.62491pt too wide) in paragraph at lines 199--199
+Overfull \hbox (9.87488pt too wide) in paragraph at lines 199--199
  []    \OT1/cmtt/m/n/12 0.0265    0.0739    0.1212    0.1686    0.2159    0.263
-3    0.3106[] 
+3[] 
  []
 
 
-Overfull \hbox (71.62491pt too wide) in paragraph at lines 199--199
- []    \OT1/cmtt/m/n/12 0.3580    0.4053    0.4527    0.5000    0.5473    0.594
-7    0.6420[] 
+Overfull \hbox (9.87488pt too wide) in paragraph at lines 199--199
+ []    \OT1/cmtt/m/n/12 0.3106    0.3580    0.4053    0.4527    0.5000    0.547
+3[] 
  []
 
 [3] [4]
-Overfull \hbox (71.62491pt too wide) in paragraph at lines 212--212
+Overfull \hbox (9.87488pt too wide) in paragraph at lines 212--212
  []   \OT1/cmtt/m/n/12 37.7143   13.5385    8.2500    5.9326    4.6316    3.798
-6    3.2195[] 
+6[] 
  []
 
 
-Overfull \hbox (71.62491pt too wide) in paragraph at lines 212--212
- []    \OT1/cmtt/m/n/12 2.7937    2.4673    2.2092    2.0000    1.8270    1.681
-5    1.5575[] 
+Overfull \hbox (9.87488pt too wide) in paragraph at lines 212--212
+ []    \OT1/cmtt/m/n/12 3.2195    2.7937    2.4673    2.2092    2.0000    1.827
+0[] 
  []
 
 File: rain2.png Graphic file (type QTm)

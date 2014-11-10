@@ -21,8 +21,9 @@ power_density = power / A
 years = 5
 days = 365
 hours = 24
+minutes = 60
 seconds = 60
-yr_seconds = days * hours * seconds
+yr_seconds = days * hours * minutes * seconds
 
 total_energy = years * yr_seconds * power * 1e-6
 
