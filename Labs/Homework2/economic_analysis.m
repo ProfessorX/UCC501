@@ -57,3 +57,8 @@ levelized_cost = sum(npv_cost) / sum(npv_work)
 total_net_return = total_tariff - (total_capital + total_land + total_maintain)
 
 irr(total_net_return)  % this requires Finance toolbox
+
+
+%% Review
+% Good modularity and extendability will make you healthy, wealthy
+% and wise.
